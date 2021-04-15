@@ -1,2 +1,0 @@
-ccache /home/ggory15/zephyr-sdk-0.12.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc libdrivers__spi.a CMakeFiles/drivers__spi.dir/spi_nrfx_spi.c.obj
-ccache /home/ggory15/zephyr-sdk-0.12.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib libdrivers__spi.a

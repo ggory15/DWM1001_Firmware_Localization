@@ -1,2 +1,0 @@
-"DTS_ROOT":"/home/ggory15/zephyrproject/modules/hal/stm32"
-"DTS_ROOT":"/home/ggory15/zephyrproject/modules/hal/nxp"
