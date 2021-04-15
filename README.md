@@ -31,8 +31,7 @@ But, again, to run this example, you need at least four boards.
 Follow the instructions from Zephyr [here](https://docs.zephyrproject.org/latest/getting_started/index.html#set-up-a-development-system)
 
 * nRF-Command-Line-Tools_10_12_1_Linux-amd64 (to download the frimware to the board):
-You can find it [here]
-(https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF5-Command-Line-Tools)
+You can find it [here](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF5-Command-Line-Tools)
 
 * wxPython (for GUI):
 ```
@@ -72,10 +71,12 @@ NOTE: The firmware of Tag is to communicate with each anchors (default, three an
 ``` 
 Note: The BLE(Bluetooth Low Energy)'s name is automatically set as "DWM1001_TAG". 
 And the default Cahracterisitcs UUID is de259bcd-1d7c-48db-a7e3-4759ac040002 
+
 ## Download of Tag's Firmware
 This firmware has the following function
 * Communication btw tag
-You can find source code of the tag's firmware, as follow:
+
+You can find source code of the anchor's firmware, as follow:
 ```
 cd apps/ss_respondor
 ```
@@ -95,6 +96,39 @@ NOTE: The firmware of each anchors has id. So you should change the id of each a
 ```
 int my_id = 1; //1, 2, 3 
 ```
+
+## GUI
+If you succesfully run a tag and anchors, you can use GUI system which is based on https://github.com/amalabey/dwm1001-gatt-client
+
+To operate GUI, the first step is 
+```
+cd gui
+```
+
+For detecting your Tag's BLE mac address
+```
+echo "power on" | sudo bluetoothctl
+sudo python3 dwm1001.py --discover
+```
+
+Then you can find the mac address of your tag (The default tag name is DWM1001-Tag)
+Please change the mac address in dwm1001.py
+```
+mac_address='e3:ec:26:c3:38:45'
+```
+
+Finally, to run GUI
+```
+sudo python3 main.py
+```
+Then you can find this window on your computer
+![image](/gui/demo/demo-floor-plan.PNG)
+
+
+
+
+
+
 
 
 
