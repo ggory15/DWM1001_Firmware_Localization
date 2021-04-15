@@ -112,7 +112,7 @@ sudo python3 dwm1001.py --discover
 ```
 
 Then you can find the mac address of your tag (The default tag name is DWM1001-Tag)
-Please change the mac address in dwm1001.py
+Please change the mac address in dwm1001.py and LocationTrackerWorker.py
 ```
 mac_address='e3:ec:26:c3:38:45'
 ```

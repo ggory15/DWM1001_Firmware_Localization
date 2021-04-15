@@ -1,0 +1,2 @@
+osource "/home/ggory15/git/DWM1001_Firmware_Localization/apps/ss_respondor/../../boards/shields/*/Kconfig.defconfig"
+osource "/home/ggory15/zephyrproject/zephyr/boards/shields/*/Kconfig.defconfig"

@@ -55,7 +55,7 @@ static dwt_config_t config = {
 #define RX_ANT_DLY 16456
 
 #define RNG_DELAY_MS 2
-int my_id = 1; //1, 2, 3, 4
+int my_id = 3; //1, 2, 3, 4
 #define SOURCE_IDX 8
 #define DEST_IDX 6
 /* Frames used in the ranging process. See NOTE 3 below. */
