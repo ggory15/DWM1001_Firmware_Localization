@@ -122,9 +122,10 @@ Finally, to run GUI
 sudo python3 main.py
 ```
 Then you can find this window on your computer
-![image](/gui/demo/demo-floor-plan.PNG)
+![image](/gui/demo/demo-image.jpeg)
 
-
+## For Debugging
+If you are developing on a Linux or OSX system and have installled the JLink package, then you can use the rtt.sh script (in the root directory) to start console instance. 
 
 
 
