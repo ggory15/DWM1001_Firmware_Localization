@@ -80,13 +80,16 @@ class LocationTrackerFame(wx.Frame):
 
     def get_location(self, data1, data2, data3):
         if (data1 >0 and data2 >0 and data3 >0):
-            A = -2.*self.anc1_pos[0] + 2. * self.anc2_pos[0]
-            B = -2.*self.anc1_pos[1] + 2. * self.anc2_pos[1]
-            D = -2.*self.anc2_pos[0] + 2. * self.anc3_pos[0]
-            E = -2.*self.anc2_pos[1] + 2. * self.anc3_pos[1]
-            C = pow(data1, 2) - pow(data2, 2) - pow(self.anc1_pos[0], 2) + pow(self.anc2_pos[0], 2) - pow(self.anc1_pos[1], 2) + pow(self.anc2_pos[1], 2)
-            F = pow(data2, 2) - pow(data3, 2) - pow(self.anc2_pos[0], 2) + pow(self.anc3_pos[0], 2) - pow(self.anc2_pos[1], 2) + pow(self.anc3_pos[1], 2)
-            self.pos = np.array([(C*E - F*B)/(E*A -B*D), (C*D-A*F)/(B*D-A*E)])
+            #2D-TRIA Algorithm
+            tmp = (self.anc2_pos[1] - self.anc1_pos[1]) * (pow(data1, 2) - pow(data3, 2) - pow(self.anc1_pos[1], 2) + pow(self.anc3_pos[0], 2) + pow(self.anc3_pos[1], 2) - pow(self.anc1_pos[0], 2))
+            lam = pow(self.anc1_pos[0], 2) + pow(self.anc1_pos[1], 2) - pow(data1, 2) - pow(self.anc2_pos[0], 2) - pow(self.anc2_pos[1], 2) + pow(data2, 2) + tmp / (self.anc3_pos[1] - self.anc1_pos[1]) 
+            delta = 2. * (  (self.anc2_pos[1] - self.anc1_pos[1]) * (self.anc3_pos[0] - self.anc1_pos[0]) -  (self.anc2_pos[0] - self.anc1_pos[0]) * (self.anc3_pos[1] - self.anc1_pos[1]))
+
+            Mx = lam * (self.anc3_pos[1] - self.anc1_pos[1]) / delta
+            tmp2 = pow(data1, 2) - pow(data3, 2) - pow(self.anc1_pos[1], 2) + pow(self.anc3_pos[0], 2) + pow(self.anc3_pos[1], 2) - pow(self.anc1_pos[0], 2) - 2. * (self.anc3_pos[0] - self.anc1_pos[0]) * Mx
+            My = tmp2 / (2 * (self.anc3_pos[1] -self.anc1_pos[1]))
+            self.pos = np.array([ Mx, My])
+            print ("2D position is :", self.pos)
 
         if (data1 == 0.0):
             self.pos = self.anc1_pos
