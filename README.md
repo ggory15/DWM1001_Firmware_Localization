@@ -10,8 +10,7 @@ This repository is based on
 
 The major changes from these original sources are:
 * Write example code for localization with trianulation. 
-* Change many lines to build it on Zephyr RTOS 2.5. 
-* Make GUI with our custum BLE communication. 
+* Make GUI with our custum UART communication. 
 
 If you wanna more insight about DWM firmware, you should visit above repositories. Then, you can find other examples. 
 
