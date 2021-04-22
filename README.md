@@ -15,6 +15,8 @@ The major changes from these original sources are:
 
 If you wanna more insight about DWM firmware, you should visit above repositories. Then, you can find other examples. 
 
+**NOTE: If you wanna see UART example instead of BLE communication, Please move to "uart" branch in this repository.**  
+
 ## Getting Started
 
 ## What's required?
@@ -72,7 +74,7 @@ NOTE: The firmware of Tag is to communicate with each anchors (default, three an
 Note: The BLE(Bluetooth Low Energy)'s name is automatically set as "DWM1001_TAG". 
 And the default Cahracterisitcs UUID is de259bcd-1d7c-48db-a7e3-4759ac040002 
 
-## Download of Tag's Firmware
+## Download of Anchor's Firmware
 This firmware has the following function
 * Communication btw tag
 
